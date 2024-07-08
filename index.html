@@ -1,22 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title> site </title>
-    <script>
-        window.open("URL","name"," attribute1=value,attribute2=value");
-     </script>
+<title>Alarm</title>
+<style>
+    body{
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    button{
+      margin: 10px;
+      height: 50px;
+      width: 150px;
+      border-radius: 10px;
+    }
+    button:hover{
+      background-color: gray;
+    }
+</style>
+<script>
+  function playAlarm() {
+    var audio = new Audio('Sedam Kon.mp3');
+    audio.play();
+  }
+
+  function stopAlarm() {
+    var solution = prompt('Solve this equation to stop the alarm: 2x + 5 = 15');
+    if (solution === '5')
+     {
+      location.reload();
+    } else {
+      alert('Incorrect solution. Alarm continues!');
+    }
+  }
+</script>
 </head>
 <body>
-<header>
-    <button onclick="reloadpage()"> reload page </button>
-    <button onclick=""> close page </button> 
-    <button onclick=""> picture </button> 
-    <button onclick=""> videos </button> 
-    <button onclick="infoos()"> information </button> 
-    <button onclick=""> store </button> 
-</header>
+<h1>Alarm Clock</h1>
+<button onclick="playAlarm()">Start Alarm</button>
+<button onclick="stopAlarm()">Stop Alarm</button>
 </body>
 </html>
